@@ -1,5 +1,5 @@
 # use a node base image
-FROM ansible/centos7-ansible
+FROM centos:centos7
 
 # set maintainer
 LABEL maintainer "Yogirajdk1993@gmail.com"
