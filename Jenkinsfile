@@ -15,8 +15,7 @@ node {
     }
     
     stage('Run image'){
-    app=docker run -p 8000:8000 yogiraj11/storeweb1
-    
+    sh docker run -p 8000:8000 yogiraj11/storeweb1
     }
-
-}
+    
+  }
