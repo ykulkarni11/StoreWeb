@@ -12,6 +12,7 @@ RUN yum -y update && \
 # Prepare environment 
 ENV JAVA_HOME /opt/java
 ENV PATH $PATH:$JAVA_HOME/bin
+ENV MAVEN_HOME /usr/share/maven
 
 # Install Oracle Java8
 ENV JAVA_VERSION 8u162
@@ -23,11 +24,10 @@ RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2
  rm jdk*.tar.gz && \
  mv jdk* ${JAVA_HOME}
  
-RUN wget http://www-us.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz | tar xzf - -C /usr/share && \
-  mv /usr/share/apache-maven-3.5.2 /usr/share/maven && \ 
-  ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-  
-  ENV MAVEN_HOME /usr/share/maven
+RUN wget http://www-us.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
+  tar xzf apache-maven-3.5.2-bin.tar.gz && \
+  rm apache*.tar.gz && \
+  mv apache* ${MAVEN_HOME}
 
 # set a health check
 HEALTHCHECK --interval=5s \
