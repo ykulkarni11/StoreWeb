@@ -25,7 +25,7 @@ RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2
  mv jdk* ${JAVA_HOME}
  
 RUN wget http://www-us.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
-  tar xzf apache-maven-3.5.2-bin.tar.gz && \
+  tar -xvf apache-maven-3.5.2-bin.tar.gz && \
   rm apache*.tar.gz && \
   mv apache* ${MAVEN_HOME}
 
