@@ -13,5 +13,10 @@ node {
 
         app = docker.build("yogiraj11/storeweb")
     }
+    
+    stage('Run image'){
+    app=docker.run("yogiraj11/storeweb")
+    
+    }
 
 }
