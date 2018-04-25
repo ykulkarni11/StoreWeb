@@ -15,7 +15,7 @@ node {
     }
     
     stage('Run image'){
-    sh "docker run -it -p 8000:8000 yogiraj11/storeweb2"
+    sh "docker run -dit yogiraj11/storeweb2"
     }
     
   }
