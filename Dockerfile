@@ -23,9 +23,9 @@ RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2
  rm jdk*.tar.gz && \
  mv jdk* ${JAVA_HOME}
  
-RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
-  && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
-  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+RUN wget http://www-us.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz | tar xzf - -C /usr/share && \
+  mv /usr/share/apache-maven-3.5.2 /usr/share/maven && \ 
+  ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
   
   ENV MAVEN_HOME /usr/share/maven
 
