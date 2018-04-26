@@ -36,6 +36,18 @@
                     <groupId>org.seedstack</groupId>
                     <artifactId>seedstack-maven-plugin</artifactId>
                     <version>2.7.0</version>
+                    <configuration>
+                    <imageName>springdocker</imageName>
+                    <baseImage>java</baseImage>
+                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+                 <resources>
+                 <resource>
+                    <targetPath>/</targetPath>
+                    <directory>${project.build.directory}</directory>
+                    <include>${project.build.finalName}.jar</include>
+                </resource>
+            </resources>
+        </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
