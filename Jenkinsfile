@@ -11,11 +11,11 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("yogiraj11/storeweb5")
+        app = docker.build("yogiraj11/storeweb6")
     }
     
     stage('Run image'){
-    sh "docker run -dit -p 8000:8000 yogiraj11/storeweb5"
+    sh "docker run -dit -p 8000:8000 yogiraj11/storeweb6"
     }
     
   }
