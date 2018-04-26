@@ -33,7 +33,7 @@ RUN ln -s /opt/maven/bin/mvn /usr/bin/mvn
 
 ENV MAVEN_HOME /opt/maven
 
-RUN mkdir /code
+RUN mkdir code
 ADD /home/vdrivitadmin/StoreMgmt/workspace/StoreMgmt /code
 
 # set a health check
