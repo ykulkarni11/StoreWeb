@@ -1,8 +1,0 @@
-services: 
-  web:
-     image: yogiraj11/storeweb
-     deploy:
-      restart_policy: 
-        condition: on-failure
-  ports:
-    - 8000:8000
